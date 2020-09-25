@@ -1,9 +1,4 @@
 
-const getBannerHeight = () => {
-    let bannerHeight = document.getElementById('header-video').offsetHeight;
-    document.getElementById('header').style.height = bannerHeight + 'px';
-}
-
 const loadBanner = () => {
     document.getElementById('bannerHeight').style.opacity = '1';
     document.querySelector('nav').style.opacity = '1';
@@ -79,7 +74,6 @@ const showSlides = () => {
 }
 
 window.onload = function() {
-    getBannerHeight();
     loadBanner();
     navBarTransform();
     showSlides();

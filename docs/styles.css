@@ -150,12 +150,18 @@ nav #logo {
     position: absolute;
     z-index: -1;
     text-align: center;
-    width: 100%;
     transition: 0.3s;
+    min-height: 80vh;
+    max-width: 100vw;
+    object-fit: cover;
 }
+header #header {
+    min-height: 80vh;
+}
+
 header{
     width: 100%;
-    height: 500px;
+    min-height: 80vh;
 }
 .header-container {
     display: block;
