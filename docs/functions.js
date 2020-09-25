@@ -54,12 +54,22 @@ const slideClicked = (value) => {
     showSlides();
 }
 let sliderTimer = null;
-
+const sliderArrowRight = () => {
+    clearTimeout(sliderTimer);
+    showSlides();
+}
+const sliderArrowLeft = () => {
+    slideIndex -= 2;
+    clearTimeout(sliderTimer);
+    showSlides();
+}
 const showSlides = () => {
     const slides = document.getElementsByClassName("mySlides");
     const slideDots = document.getElementsByClassName("slideshow-circle");
     if(slideIndex >= slides.length) {
         slideIndex = 0;
+    } else if(slideIndex < 0) {
+        slideIndex = slides.length -1;
     }
     for(let i = 0; i < slides.length; i++) {
         if(slides[slideIndex] != slides[i]) {
@@ -78,5 +88,3 @@ window.onload = function() {
     navBarTransform();
     showSlides();
 };
-
-window.onresize = getBannerHeight;
