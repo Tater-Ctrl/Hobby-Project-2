@@ -47,22 +47,24 @@ window.addEventListener('scroll', function() {
     navBarTransform();
 });
 
+let sliderTimer = null;
 let slideIndex = 0;
 const slideClicked = (value) => {
     slideIndex = value;
     clearTimeout(sliderTimer);
     showSlides();
 }
-let sliderTimer = null;
-const sliderArrowRight = () => {
-    clearTimeout(sliderTimer);
-    showSlides();
+const sliderArrow = (bool) => {
+    if(bool) {
+        slideIndex -= 2;
+        clearTimeout(sliderTimer);
+        showSlides();
+    } else {
+        clearTimeout(sliderTimer);
+        showSlides();
+    }
 }
-const sliderArrowLeft = () => {
-    slideIndex -= 2;
-    clearTimeout(sliderTimer);
-    showSlides();
-}
+
 const showSlides = () => {
     const slides = document.getElementsByClassName("mySlides");
     const slideDots = document.getElementsByClassName("slideshow-circle");
